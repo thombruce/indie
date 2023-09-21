@@ -4,4 +4,17 @@ export default defineNuxtConfig({
   extends: [
     '@thombruce/tnt-content'
   ],
+  content: {
+    documentDriven: {
+      globals: {
+        theme: {
+          where: {
+            _id: 'content:_theme.yml'
+          },
+          without: ['_']
+        }
+      },
+      layoutFallbacks: ['theme'],
+    },
+  },
 })
